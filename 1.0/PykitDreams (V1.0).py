@@ -1,3 +1,10 @@
+import tkinter as tk
+import turtle
+import time
+import random
+import pygame
+import turtle
+
 def hello():
   
     name = str(input("Enter your name: "))
