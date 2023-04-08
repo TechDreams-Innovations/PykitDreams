@@ -2,7 +2,6 @@ import numpy as np
 import sys
 import os
 import turtle
-import time
 import random
 import pygame
 import turtle
@@ -42,6 +41,8 @@ def fourfunctionscalculator():
 
 def TypingTest():
     # Typing Test by @CodeMaster7000
+    
+    from time import time
     
     def typingErrors(prompt):
         global iwords
