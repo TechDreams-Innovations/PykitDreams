@@ -10,7 +10,7 @@ def hello():
   
     name = str(input("Enter your name: "))
     
-    print("Hello there " + str(name) + "! Welcome to PykitDreams V1.0 - a Python module designed to revolutionise the way you use your computers."))
+    print("Hello there " + str(name) + "! Welcome to PykitDreams - a CodeMaster7000 Studios Python module designed to revolutionise the way you use your computers!"))
     
     
 def fourfunctionscalculator():  
