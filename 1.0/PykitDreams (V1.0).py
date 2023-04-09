@@ -1,3 +1,4 @@
+from datetime import date
 import numpy as np
 import sys
 import os
@@ -23,6 +24,13 @@ def calendar():
     y = int(input("Enter year: "))  
     m = int(input("Enter month: "))  
     print(calendar.month(y,m))      
+    
+def datecalculator():
+    
+    fdate = date(a, b, c) #Enter first date here.
+    ldate = date(d, e, f) #Enter last date here.
+    delta = ldate - fdate
+    print(delta.days)
     
 def fourfunctionscalculator():  
     
@@ -50,7 +58,7 @@ def fourfunctionscalculator():
     else:
         print("Invalid operator.")
 
-def TypingTest():
+def typingtest():
     # Typing Test by @CodeMaster7000
     
     from time import time
