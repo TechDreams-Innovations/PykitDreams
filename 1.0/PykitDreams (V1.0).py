@@ -6,6 +6,11 @@ import random
 import pygame
 import turtle
 
+class Computer:
+    def __init__(self, company, model):
+        self.company = company
+        self.model = model
+
 def hello():
   
     name = str(input("Enter your name: "))
