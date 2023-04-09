@@ -5,6 +5,7 @@ import turtle
 import random
 import pygame
 import turtle
+import calendar
 
 class Computer:
     def __init__(self, company, model):
@@ -17,6 +18,11 @@ def hello():
     
     print("Hello there " + str(name) + "! Welcome to PykitDreams - a CodeMaster7000 Studios Python module designed to revolutionise the way you use your computers!"))
     
+def calendar(): 
+    
+    y = int(input("Enter year: "))  
+    m = int(input("Enter month: "))  
+    print(calendar.month(y,m))      
     
 def fourfunctionscalculator():  
     
