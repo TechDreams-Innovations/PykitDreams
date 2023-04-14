@@ -6,7 +6,6 @@ import sys
 import turtle
 import random
 import pygame
-import turtle
 import calendar
 
 class Computer:
