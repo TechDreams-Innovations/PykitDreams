@@ -70,7 +70,6 @@ def scientificcalculator():
             self.entry.grid(row=0, column=0, columnspan=6, pady=6)
             self.button_creator()
         def button_creator(self):
-
             b_list = [
                 [ 'sin', 'cos', 'tan', 'x²', 'x³'],
                 ['log(x)', '1/x', 'x!', 'sqrt', 'cbrt'],
@@ -79,7 +78,6 @@ def scientificcalculator():
                 ['1', '2', '3', '+', '-'],
                 ['0', '.', '10^x', '=']
             ]
-
             for i, row in enumerate(b_list):
                 for j, b_text in enumerate(row):
                     button = Button(self.master, text=b_text, width=5, height=3, command=lambda text=b_text: self.click(text))
@@ -91,7 +89,6 @@ def scientificcalculator():
             self.master.columnconfigure(3, weight=1)
             self.master.columnconfigure(4, weight=1)
             self.master.columnconfigure(5, weight=1)
-
         def click(self, b_text):
             if b_text == '=':
                 try:
@@ -99,7 +96,6 @@ def scientificcalculator():
                     self.total.set(result)
                 except:
                     self.total.set("Error!")
-
             elif b_text == 'C':
                     self.total.set("")
             elif b_text == 'sin':
@@ -138,7 +134,6 @@ def scientificcalculator():
                     self.total.set(result)
                 except:
                     self.total.set("Error!")
-
             elif b_text == '1/x':
                 try:
                     result = 1 / float(self.entry.get())
