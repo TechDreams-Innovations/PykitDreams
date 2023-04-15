@@ -17,7 +17,7 @@ def hello():
   
     name = str(input("Enter your name: "))
     
-    print("Hello there " + str(name) + "! Welcome to PykitDreams - a CodeMaster7000 Studios Python module designed to revolutionise the way you use your computers!"))
+    print("Hello there " + str(name) + "! Welcome to PykitDreams - a CodeMaster7000 Studios Python module designed to revolutionise the way you use your computers!")
     
 def calendar(): 
     
@@ -162,7 +162,7 @@ def scientificcalculator():
                  try:
                     result = 10 ** float(self.entry.get())
                     self.total.set(result)
-                except:
+                 except:
                     self.total.set("Error!")
             else:
                 self.total.set(self.entry.get() + b_text)
@@ -187,16 +187,16 @@ def typingtest():
             if i in (0, len(iwords)-1):
                 if iwords[i] == words[i]:
                     continue
-            else:
-                errors +=1
                 else:
-                    if iwords[i] == words[i]:
-                        if (iwords[i+1] == words[i+1]) & (iwords[i-1] == words[i-1]):
-                            continue
-                        else:
-                            errors += 1
+                    errors +=1
+            else:
+                if iwords[i] == words[i]:
+                    if (iwords[i+1] == words[i+1]) & (iwords[i-1] == words[i-1]):
+                        continue
                     else:
                         errors += 1
+                else:
+                    errors += 1
         return errors
 
     def typingSpeed(iprompt, stime, etime):
@@ -392,9 +392,3 @@ def tictactoe():
 				    game_over = False
 
 	    pygame.display.update()
-
-sampleInput = input("Sample input: ")
-
-errorMessage = print("An unexpected error occurred.")
-
-helloWorld = print("Hello world!")
