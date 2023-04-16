@@ -2,6 +2,8 @@ from datetime import date
 from tkinter import *
 from math import *
 from numpy import *
+from wonderwords import RandomSentence
+import time
 import sys
 import turtle
 import random
@@ -95,67 +97,45 @@ def scicalc():
         root.mainloop()
 
 def typingtest():
-    from time import time
+    sent_list = []
+    sent_para = ""
+    for i in range(5):
+        sent = RandomSentence()
+        random_sent = sent.sentence()
+        sent_list.append(random_sent)
+        sent_para += random_sent +  " "
+    
+    def errorrate(sent_para, typed_para):
+        errorcount = 0
+        length = len(sent_para)
+        for character in range(length):
+            try: 
+                if sent_para[character] != typed_para[character]:
+                errorcount += 1
+            except:
+                errorcount += 1
+        errorpercent = errorcount/length * 100
+        return errorpercent
 
-    def typingErrors(prompt):
-        global iwords
-        words = prompt.split() + [' ' for _ in  range(len(iwords) - len(prompt.split()) + 1)]
-        print(len(words))
-        print(len(iwords))
-        errors = 0
-        for i in range(len(iwords) - 1):
-            print(i)
-            if iwords[i] == words[i+1]:
-                iwords.insert(i, ' ')
-                print(iwords)
-                errors += 1
-                continue
-            elif iwords[i] == words[i-1]:
-                del(iwords[i-1])
-                print(iwords)
-                errors += 1
-                continue
-            if i in (0, len(iwords)-1):
-                if iwords[i] == words[i]:
-                    continue
-                else:
-                    errors +=1
-            else:
-                if iwords[i] == words[i]:
-                    if (iwords[i+1] == words[i+1]) and (iwords[i-1] == words[i-1]):
-                        continue
-                    else:
-                        errors += 1
-                else:
-                    errors += 1
-        return errors
+    print("Your typing test paragraph: \n")
+    print(sent_para)
+    print("\n")
+    start_time = time.time()
+    typed_para = input()
+    end_time = time.time()
+    time_taken = end_time - start_time
+    errorpercent = errorrate(sent_para, typed_para)
+    print("\n")
 
-    def typingSpeed(iprompt, stime, etime):
-        global iwords
-        iwords = iprompt.split()
-        speed = len(iwords) / float(timeElapsed(stime, etime)/60)
-        return speed
+    if errorpercent > 35:
+        print(f"Your error rate {error_percent} was fairly high, hence your accurate speed could not be computed.")
 
-    def timeElapsed(stime, etime):
-        return etime - stime
-
-    if __name__ == '__main__':
-        prompt = "\n\nA turquoise-blue stream wound its merry way through the forest. Babbling and burbling, it sprung over the limestone rocks in its way. Pebbles whisked about in the under wash like pieces of glitter. Streams are the liquid soul of the forest, and this one was glowing. Chords of soft light speared down from above, bathing its surface in gold. It was glinting with little sparkles, like a thousand diamonds blessed with an inner fire. A galaxy of dragonflies fizzed through the beams of light, wings a-glitter in the sun."
-        print("TYPE THIS: ", prompt,"")
-        input("\nPress 'Enter' when you are ready!")
-
-        stime = time()
-        iprompt = input()
-        etime = time()
-
-        time = round(timeElapsed(stime, etime), 2)
-        speed = round(typingSpeed(iprompt, stime, etime), 2)
-        errors = typingErrors(prompt)
-
-        print("Total time elapsed:", time, "s")
-        print("Mean typing speed:", speed, "words/minute")
-        print("With a total of:", errors, "errors")
-
+    else:
+        speed = len(typed_para)/time_taken
+        print("Score Report: ")
+        print(f"Your typing speed was {speed} words/second.")
+        print(f"Your error rate was {errorpercent}.")
+     
 def tictactoe():    
     pygame.init()
     WIDTH = 600
