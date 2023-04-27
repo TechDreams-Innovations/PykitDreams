@@ -265,9 +265,3 @@ def tictactoe():
                     player = 1
                     game_over = False
         pygame.display.update()
-
-
-if __name__ == "__main__":
-    options = {"month calendar":monthcalendar, "date calculator":datecalculator, "simple calculator":simplecalculator, "scientific calculator":scicalc, "typing test":typingtest, "tic tac toe":tictactoe}
-    print("Hello there! Welcome to PykitDreams - a TechDreams Innovations Python module designed to revolutionise the way you use your computers!")
-    options[input("Choose your option:\n    Month Calendar\n    Date Calculator\n    Simple Calculator\n    Scientific Calculator\n    Typing Test\n    Tic Tac Toe").lower()]()
