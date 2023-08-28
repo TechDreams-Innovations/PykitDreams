@@ -11,8 +11,4 @@
 
 ## Reporting a Vulnerability
 
-Use this section to tell people how to report a vulnerability.
-
-e.g. Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+If you see a vulnerability or if there is anything we've missed, please create an issue and we will look into it.
